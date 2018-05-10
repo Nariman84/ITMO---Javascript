@@ -3,7 +3,7 @@
 чтобы в X оказалось меньшее из этих значений, а в Y — большее.
 */
 
-alert("Задача №1")
+/*alert("Задача №1")
 var x = prompt("Введите значение для переменной x");
 var y = prompt("Введите значение для переменной y");
 console.log('x = ' + x);
@@ -132,7 +132,7 @@ if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
 	alert(year + ' - високосный год');
 } else {
 	alert(year + ' - не високосный год');
-}
+}*/
 
 
 /*Задача 7*
@@ -150,8 +150,8 @@ if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
 то вывести: 'Все тарелки вымыты, моющее средство закончилось'.*/
 
 alert("Задача №7*")
-var plate = parseFloat(prompt("Введите количество тарелок:", 0));
-var detergent = parseFloat(prompt("Введите количество моющего средства", 0));
+var plate = parseFloat(prompt("Введите количество тарелок:"));
+var detergent = parseFloat(prompt("Введите количество моющего средства"));
 while (true) {
 	plate--;
 	detergent -= 0.5;
@@ -163,8 +163,12 @@ while (true) {
 		alert('Все тарелки вымыты. Осталось ' + detergent.toFixed(2) + ' ед. моющего средства');
 		break;
 	}
-	if (plate > 0 && detergent >= 0 && detergent < 1) {
+	if (plate > 0 && detergent === 0) {
 		alert('Моющее средство закончилось. Осталось ' + plate + ' тарелок');
+		break;
+	}
+	if (plate > 0 && detergent > 0 && detergent < 0.5) {
+		alert('Осталось ' + detergent.toFixed(2) + ' ед. моющего средства. Осталось ' + plate + ' тарелок');
 		break;
 	}
 }
