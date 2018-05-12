@@ -3,24 +3,24 @@
 Вывести сумму цифр этого числа.
 */
 
-var x = prompt('Введите целое число');
+/*var x = prompt('Введите целое число');
 var sum = 0;
 var arr = x.split('');
 
 for (var i = 0; i < arr.length; i++) {
 	sum += parseInt(arr[i]);
 }
-alert(sum);
+alert(sum);*/
 
 /*Задача 2
 Дана строка S и символ C. Удвоить каждое вхождение символа C в строку S.
 */
 
-var S = prompt("Введите строку");
+/*var S = prompt("Введите строку");
 var C = prompt("Введите символ");
 var reg = new RegExp(C, "g");
 var S = S.replace(reg, C + C);
-alert(S);
+alert(S);*/
 
 /*Задача 3
 Проверить, что введенный пароль удовлетворяет 
@@ -37,7 +37,7 @@ if (passwd.length < 9) {
 	alert('Пароля должен быть длиной 9 или более символов');
 } else if (passwd.match(/((?=.*[a-z])(?=.*[A-Z]))/) === null) {
 	alert('Пароль должен содержать английские буквы верхнего и нижнего регистра');
-} else if (passwd.match(/.*[\d{3}]/) === null) {
+} else if (passwd.match(/.*\d{3}/) === null) {
 	alert ('Пароль должен содержать более двух цифр');
 } else if (passwd.match(/.*[!$#%]/) === null) {
 	alert('Пароль должен содержать один из символов !, $, #, %');
