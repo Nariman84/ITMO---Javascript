@@ -8,14 +8,14 @@
 var stud = {
 	name: "Nariman",
 	surname: "Ibragimov",
-	age: "33",
-	hobby: ["music", "programming", "retrocar"],
+	age: "34",
+	hobby: ["music", "guitar", "programming", "retro-car"],
 	university: "SibADI",
-}
-function objstud() {
-	console.log(stud);
-}
-objstud();
+};
+function objstud(param) {
+	console.log(param);
+};
+objstud(stud);
 
 /*Массивы, циклы, условия:
 
@@ -24,15 +24,16 @@ objstud();
 (неповторяющиеся) элементы. 
 Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].*/
 
-let A = [1, 2, 5, 7, 10];
-let B = [2, 3, 7, 11];
-let C = [];
-for (i = 0; i < A.length; i++) {
-	if (B.indexOf(A[i]) == -1) {
-		C.push(A[i]);
+let A = [1, 2, 2, 7, 10];
+let B = [2, 2, 7, 7, 11];
+let C = A.concat(B);
+for (var i = 0; i < C.length; i++) {
+	for (var j = i+1; j < C.length; j++) {
+		if (C[i] === C[j]) {
+			C.splice(i, 1);
+		}
 	}
-}
-C = C.concat(B);
+};
 console.log(C);
 
 // Функции:
@@ -44,7 +45,7 @@ console.log(C);
 Про числа Фибоначчи: https://ru.wikipedia.org/wiki/Числа_Фибоначчи*/
 
 
-var n = prompt('Введите количество чисел Фибоначчи для отображения');
+var n = parseInt(prompt('Введите количество чисел Фибоначчи для отображения'));
 
 function fib(n) {
 	var F = [0, 1];
@@ -65,9 +66,9 @@ console.log(fib(n));
 Нужно реализовать корректные окончания слов, например: 1 день, 2 дня, 
 5 дней. Функция должна корректно работать при запуске в любом году, 
 т.е. грядущий год должен вычисляться программно.*/
-
-/*var date = new Date();
-console.log(date);*/
+/*
+var date = new Date();
+console.log(date);
 
 function counter() {
 	today = new Date ();
@@ -78,7 +79,4 @@ function counter() {
 	daysToNewYear = Math.round((NewYearDay.getTime() - today.getTime())/msPerDays);
 }
 counter();
-console.log(daysToNewYear);
-
-/*var date = new Date();
-console.log(date);*/
+console.log(daysToNewYear);*/
