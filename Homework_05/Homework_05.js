@@ -5,7 +5,7 @@
 Написать отдельную функцию, которой передается объект студент, 
 а она выводит его содержимое.*/
 
-var stud = {
+/*var stud = {
 	name: "Nariman",
 	surname: "Ibragimov",
 	age: "34",
@@ -15,7 +15,7 @@ var stud = {
 function objstud(param) {
 	console.log(param);
 };
-objstud(stud);
+objstud(stud);*/
 
 /*Массивы, циклы, условия:
 
@@ -24,13 +24,14 @@ objstud(stud);
 (неповторяющиеся) элементы. 
 Например: A = [1,2], B = [2,3] получим С = [1, 2, 3].*/
 
-let A = [1, 2, 2, 7, 10];
-let B = [2, 2, 7, 7, 11];
+let A = [1, 2, 7, 10];
+let B = [2, 7, 2];
 let C = A.concat(B);
 for (var i = 0; i < C.length; i++) {
-	for (var j = i+1; j < C.length; j++) {
+	for (var j = i + 1; j < C.length; j++) {
 		if (C[i] === C[j]) {
 			C.splice(i, 1);
+			i--;
 		}
 	}
 };
@@ -45,7 +46,7 @@ console.log(C);
 Про числа Фибоначчи: https://ru.wikipedia.org/wiki/Числа_Фибоначчи*/
 
 
-var n = parseInt(prompt('Введите количество чисел Фибоначчи для отображения'));
+/*var n = parseInt(prompt('Введите количество чисел Фибоначчи для отображения'));
 
 function fib(n) {
 	var F = [0, 1];
@@ -58,7 +59,7 @@ function fib(n) {
 	}
 	return F;
 }
-console.log(fib(n));
+console.log(fib(n));*/
 
 /*4** Напишите функцию counter, которая возвращает количество дней, 
 часов и минут до нового года. Датой наступления нового года считается 

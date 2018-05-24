@@ -12,11 +12,10 @@ var stud = {
 	hobby: ['программирование', ' музыка', ' аниме'],
 	university: 'ИТМО',
 };
-function objStud(param) {
-
-	document.write(stud.name + ' ' + stud.surname + '. ' + stud.age + 'год. Интересы: ' + stud.hobby + '. Учится в ' + stud.university + '.');
+stud.objStud = function() {
+	console.log(this.name + ' ' + this.surname + '. ' + this.age + 'год. Интересы: ' + this.hobby + '. Учится в ' + this.university + '.');
 }
-objStud(stud);
+stud.objStud();
 
 /*Рекурсия:
 
@@ -28,7 +27,7 @@ n! = n * (n - 1) * (n - 2) * ...*1
 2! = 2 * 1
 3! = 3 * 2 * 1*/
 
-var n = parseInt(prompt('Введите число, факториал которого необходимо получить'));
+/*var n = parseInt(prompt('Введите число, факториал которого необходимо получить'));
 function fact(n) {
 	if (n > 0 && n != 1) {
 		return fact(n - 1) * n;
@@ -36,7 +35,7 @@ function fact(n) {
 		return n;
 	}
 }
-alert(fact(n));
+alert(fact(n));*/
 
 /*Замыкания:
 
@@ -51,14 +50,15 @@ function fun() {
 	return function randNum() {
 		for (var i = 0; i < 100; i++) {
 			var randN = Math.floor(Math.random() * 100) + 1;
-			arr[i] = randN;
 			if (arr.indexOf(randN) === -1) {
-				arr = arr.push(arr[i]);
-			};
+				arr[i] = randN;
+				arr.push(arr[i]);
+				return randN;
+			} else {
+				i--;
+			}
 		}
-		return randN;
 	};
-	return arr;
 }
 var result = fun();
 console.log(result());
