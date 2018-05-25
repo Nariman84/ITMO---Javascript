@@ -5,7 +5,7 @@
 - метод выводящий в консоль биографическую справку в виде, например: 
 «Иван Петров. 21 год. Интересы: программирование, музыка, аниме. Учится в ИТМО.*/
 
-var stud = {
+/*var stud = {
 	name: 'Иван',
 	surname: 'Петров',
 	age: '21',
@@ -15,7 +15,7 @@ var stud = {
 stud.objStud = function() {
 	console.log(this.name + ' ' + this.surname + '. ' + this.age + 'год. Интересы: ' + this.hobby + '. Учится в ' + this.university + '.');
 }
-stud.objStud();
+stud.objStud();*/
 
 /*Рекурсия:
 
@@ -48,17 +48,15 @@ alert(fact(n));*/
 function fun() {
 	var arr = [];
 	return function randNum() {
-		for (var i = 0; i < 100; i++) {
+		while (arr.length !== 100) {
 			var randN = Math.floor(Math.random() * 100) + 1;
 			if (arr.indexOf(randN) === -1) {
-				arr[i] = randN;
-				arr.push(arr[i]);
+				arr.push(randN);
 				return randN;
-			} else {
-				i--;
 			}
-		}
-	};
+		};
+	return;
+	}
 }
 var result = fun();
 console.log(result());
